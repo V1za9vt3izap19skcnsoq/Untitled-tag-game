@@ -33,11 +33,10 @@ local Window = ArrayField:CreateWindow({
     }
 })
 
-local MainTab = Window:CreateTab("Main Tab", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Main Tab", 4483362458) -- Title, Image
 
-local Label = MainTab:CreateLabel("Click The Button On The Top Left to open tabs",Section)
 
-MainTab:CreateButton({
+Tab:CreateButton({
     Name = "Copy Discord Link",
     Info = {
         Title = 'Copy Discord Link',
@@ -58,7 +57,9 @@ local hitboxSize = 5
 local tagAuraMode = "Closest"
 local tagAuraRange = 15
 
-MainTab:CreateToggle({
+local Section = Tab:CreateSection("Main",false)
+
+Tab:CreateToggle({
     Name = "Tag Aura",
     Info = {
         Title = "Tag Aura",
@@ -72,7 +73,7 @@ MainTab:CreateToggle({
     end
 })
 
-MainTab:CreateDropdown({
+Tab:CreateDropdown({
     Name = "Tag Aura Mode",
     Options = {"Closest", "Multi Target"},
     CurrentOption = "Closest",
@@ -83,7 +84,7 @@ MainTab:CreateDropdown({
     end
 })
 
-MainTab:CreateSlider({
+Tab:CreateSlider({
     Name = "Tag Aura Range",
     Range = {0, 20},
     Increment = 1,
@@ -94,7 +95,7 @@ MainTab:CreateSlider({
     end,
 })
 
-MainTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Tag Aura Ignore Dead",
     Info = {
         Title = "Ignore Dead",
@@ -108,7 +109,7 @@ MainTab:CreateToggle({
     end
 })
 
-MainTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Tag Aura Team Check",
     Info = {
         Title = "Team Check",
@@ -122,7 +123,7 @@ MainTab:CreateToggle({
     end
 })
 
-MainTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Hitbox Expander",
     Info = {
         Title = "Hitbox Expander",
@@ -136,7 +137,7 @@ MainTab:CreateToggle({
     end
 })
 
-MainTab:CreateSlider({
+Tab:CreateSlider({
     Name = "Hitbox Size",
     Range = {0, 20},
     Increment = 1,
@@ -283,6 +284,9 @@ MainTab:CreateToggle({
     end,
 })
 
+local Section = Tab:CreateSection("Useless Auto Vote Lol",false)
+
+
 local currentMapSelection = "Option 1"
 local isAutoVoteEnabled = false
 local isAutoVoteRunning = false
@@ -342,11 +346,9 @@ coroutine.wrap(function()
     end
 end)
 
+local Section = Tab:CreateSection("Self/Player",false)
 
-local SelfTab = Window:CreateTab("Self Tab", 4483362458) -- Title, Image
-
--- Infinite Jump Toggle
-SelfTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Inf Jump",
     Info = {
         Title = 'Infinite Jump',
@@ -373,7 +375,7 @@ SelfTab:CreateToggle({
 })
 
 -- Noclip Toggle
-SelfTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Noclip",
     Info = {
         Title = 'Noclip',
@@ -446,7 +448,7 @@ local Player = game:GetService("Players").LocalPlayer
 local humanoid = Player.Character:FindFirstChildWhichIsA("Humanoid")
 
 local WalkSpeedEnabled = false
-SelfTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Enable WalkSpeed",
     CurrentValue = false,
     Flag = "ToggleWalkSpeed",
@@ -460,7 +462,7 @@ SelfTab:CreateToggle({
     end,
 })
 
-SelfTab:CreateSlider({
+Tab:CreateSlider({
     Name = "WalkSpeed",
     Range = {16, 300},
     Increment = 1,
@@ -477,7 +479,7 @@ SelfTab:CreateSlider({
 
 -- JumpPower Slider
 local JumpPowerEnabled = false
-SelfTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Enable JumpPower",
     CurrentValue = false,
     Flag = "ToggleJumpPower",
@@ -491,7 +493,7 @@ SelfTab:CreateToggle({
     end,
 })
 
-SelfTab:CreateSlider({
+Tab:CreateSlider({
     Name = "JumpPower",
     Range = {50, 500},
     Increment = 1,
@@ -506,7 +508,7 @@ SelfTab:CreateSlider({
     end,
 })
 
-local Tab = Window:CreateTab("Esp Tab", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Esp Op!!!",false)
 
 local espEnabled = {
     NameESP = false,
