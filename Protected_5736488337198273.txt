@@ -267,7 +267,7 @@ local function moveToCoin()
     end
 end
 
-MainTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Auto Farm Coins",
     Info = {
         Title = 'Auto Farm Coins',
@@ -291,7 +291,7 @@ local currentMapSelection = "Option 1"
 local isAutoVoteEnabled = false
 local isAutoVoteRunning = false
 
-MainTab:CreateDropdown({
+Tab:CreateDropdown({
     Name = "Map to auto vote",
     Options = {"Option 1", "Option 2", "Option 3"},
     CurrentOption = currentMapSelection,
@@ -302,7 +302,7 @@ MainTab:CreateDropdown({
     end,
 })
 
-MainTab:CreateToggle({
+Tab:CreateToggle({
     Name = "Auto Vote",
     Info = {
         Title = 'Auto Vote',
